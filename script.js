@@ -87,26 +87,24 @@ const outputData = new Array(5);
         const originalText = inputData[3].value;
         let givenArray= originalText.split(",");
         let orderedArray = new Array();
-        // 4. core logic - implementation
-        
+
+
+// 4. core logic - implementation
+
         function shortestWord (str1, str2) {
             if (str1.length > str2.length) {
-                return str2;
-            }
+                return str2; }
             else {
-                return str1; //returns first string even if both are equal by length, so that array shift() operation is easy if needed.
-            }
+                return str1; } //returns first string even if both are equal by length, so that array shift() operation is easy if needed.     
         }
 
         function smallestWord (str1, str2) {
             sw = shortestWord(str1, str2); 
             for (let j=0; j<sw.length; j++) {
                 if (str1[j] < str2[j]) {
-                    return str1;
-                }
+                    return str1; }
                 if (str2[j] < str1[j]) {
-                    return str2
-                }
+                    return str2 }
             }
             return sw; // if both are equal till the sw.length,  shortest word is the best choice
         }
@@ -129,28 +127,31 @@ const outputData = new Array(5);
     });
 
 
-// Code for Q/A-5 : Longest word
+// Code for Q/A-5 : Function to insert one array into another array
 // 1. Select the elements
     inputData[4] = document.getElementById('inputFive');
+    secondInput = document.getElementById('inputFive-second');
     enterButton[4] = document.getElementById('ansFive');
     outputData[4] = document.getElementById('outputFive');
+
+    function insertArray(arr1,arr2) {
+            arr2.unshift(arr1[0]);
+            arr2.push(arr1[1]);
+            return arr2.join(" ,");
+        }
 
     // 2. Event Listener for the Enter Button
     enterButton[4].addEventListener('click', () => {
         // 3. Get text from the input tag
-        const givenWords = inputData[4].value;
-        let wordsArray= givenWords.split(" ");
-        let longestWord = wordsArray[0];
+        let givenArray1 = inputData[4].value;
+        let givenArray2 = secondInput.value;
+
+        let firstArray= givenArray1.split(",");
+        let secondArray = givenArray2.split(",");
 
         // 4. core logic - implementation
-        for(let i=1; i<wordsArray.length; i++)
-        {
-            if(wordsArray[i].length>longestWord.length)
-            {
-                longestWord=wordsArray[i];
-            }
-        }
+        //function declared globally
 
         // 5. Display output
-        outputData[4].textContent = longestWord+" is a longest word of the given sentence";
+        outputData[4].textContent = insertArray(firstArray,secondArray);
     });
