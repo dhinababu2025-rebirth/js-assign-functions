@@ -1,0 +1,2 @@
+	/* This file is often left empty in Tailwind CSS v4+ CLI setups. */
+@import "tailwindcss"; /*important to link styling in versions beyond 4.xx*/
