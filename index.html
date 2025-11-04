@@ -16,7 +16,7 @@
 </head>
 
 
-<body class="bg-gray-300 h-screen overflow-x-hidden">
+<body class="bg-white h-screen overflow-x-hidden">
 
     <div class="flex flex-col">
 
@@ -28,7 +28,7 @@
         
         <div class="flex justify-center bg-blue-950 shadow-sm sticky top-0 z-10">
             <h1 class="text-xs md:text-sm lg:text-lg font-bold text-orange-500">Scroll horizontally to navigate all the 5 Q/A.</h1>
-            <p class="text-xs md:text-sm lg:text-lg px-4 text-white mt-1"> slide : (Q/A - <span id="current-q">1</span>)</p>
+            <p class="text-xs md:text-sm lg:text-lg px-4 text-white"> (slide : <span id="current-q">1</span>)</p>
             <!-- <p class="text-sm text-gray-500 mt-1">Scroll horizontally to navigate 15 Q/A.</p> -->
         </div>
 
@@ -42,8 +42,8 @@
             <div id="slide-1" class="slide snap-center shrink-0 w-screen h-full overflow-y-scroll py-2 flex justify-center bg-white border-r">
                 <div class="max-w-full w-11/12 flex flex-col h-full">
                     <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 1 / 15</p> -->
-                    <h2 class="lg:text-sm md:text-xl text-lg font-bold text-gray-900 mb-1">1. Write a function that checks whether a given string is a palindrome (a word, phrase, or
-sequence that reads the same backward as forward).</h2>
+                    <h2 class="lg:text-xl md:text-lg text-sm font-bold text-gray-900 mb-1">1. Write a function that checks whether a given string is a palindrome (a word, phrase, or
+                    sequence that reads the same backward as forward).</h2>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 flex-1 overflow-y-scroll">
                         <!-- column 1 : code screenshot -->
@@ -52,12 +52,12 @@ sequence that reads the same backward as forward).</h2>
                             <img src="./images/Screenshot-1.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
                         </div>
                         <!-- column 2 : input, enter, output, score  -->
-                        <div class="pl-1 max-h-[63vh]">
+                        <div class="pl-1 flex flex-col justify-evenly">
                             <!-- input -->
                         <input 
                             id="inputOne"
                             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
-                            placeholder="Type a Word or Sentence to Reverse"
+                            placeholder="Check Palindrome: Type a String"
                         ></input>
                             <!-- enter button -->
                         <button id="ansOne" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
@@ -67,7 +67,7 @@ sequence that reads the same backward as forward).</h2>
                         </p>
                             <!-- score -->
                             <div class="feedback-container mt-8 flex justify-center items-center space-x-4">
-                                <p class="text-lg font-semibold">Are you satisfied with the output?</p>
+                                <p class="text-lg font-semibold">Are you satisfied with this output?</p>
                             
                                 <div class="flex items-center space-x-6">
                                     
@@ -106,8 +106,7 @@ sequence that reads the same backward as forward).</h2>
             <div id="slide-2" class="slide snap-center shrink-0 w-screen h-full overflow-y-scroll py-2 flex justify-center bg-white border-r">
                 <div class="max-w-full w-11/12 flex flex-col h-full">
                     <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 1 / 15</p> -->
-                    <h2 class="lg:text-sm md:text-xl text-lg font-bold text-gray-900 mb-1">1. Write a function that checks whether a given string is a palindrome (a word, phrase, or
-sequence that reads the same backward as forward).</h2>
+                    <h2 class="lg:text-xl md:text-lg text-sm font-bold text-gray-900 mb-1">2. Write a function that takes a string and returns it in reverse order.</h2>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 flex-1 overflow-y-scroll">
                         <!-- column 1 : code screenshot -->
@@ -116,12 +115,12 @@ sequence that reads the same backward as forward).</h2>
                             <img src="./images/Screenshot-2.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
                         </div>
                         <!-- column 2 : input, enter, output, score  -->
-                        <div class="pl-1 max-h-[63vh]">
+                        <div class="pl-1 flex flex-col justify-evenly">
                             <!-- input -->
                         <input 
                             id="inputTwo"
                             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
-                            placeholder="Type a Word or Sentence to Reverse"
+                            placeholder="String Reverse: Type any text here."
                         ></input>
                             <!-- enter button -->
                         <button id="ansTwo" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
@@ -131,7 +130,7 @@ sequence that reads the same backward as forward).</h2>
                         </p>
                             <!-- score -->
                             <div class="feedback-container mt-8 flex justify-center items-center space-x-4">
-                                <p class="text-lg font-semibold">Are you satisfied with the output?</p>
+                                <p class="text-lg font-semibold">Are you satisfied with this output?</p>
                             
                                 <div class="flex items-center space-x-6">
                                     
@@ -171,8 +170,8 @@ sequence that reads the same backward as forward).</h2>
             <div id="slide-3" class="slide snap-center shrink-0 w-screen h-full overflow-y-scroll py-2 flex justify-center bg-white border-r">
                 <div class="max-w-full w-11/12 flex flex-col h-full">
                     <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 1 / 15</p> -->
-                    <h2 class="lg:text-sm md:text-xl text-lg font-bold text-gray-900 mb-1">1. Write a function that checks whether a given string is a palindrome (a word, phrase, or
-sequence that reads the same backward as forward).</h2>
+                    <h2 class="lg:text-xl md:text-lg text-sm font-bold text-gray-900 mb-1">3. Remove Whitespace from a String Write a function that removes all leading and trailing
+whitespace from a string.</h2>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 flex-1 overflow-y-scroll">
                         <!-- column 1 : code screenshot -->
@@ -180,12 +179,12 @@ sequence that reads the same backward as forward).</h2>
                             <img src="./images/Screenshot-3.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
                         </div>
                         <!-- column 2 : input, enter, output, score  -->
-                        <div class="pl-1 max-h-[63vh]">
+                        <div class="pl-1 flex flex-col justify-evenly">
                             <!-- input -->
                         <input 
                             id="inputThree"
                             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
-                            placeholder="Type a Word or Sentence to Reverse"
+                            placeholder="Space Remover: Type any sentance here."
                         ></input>
                             <!-- enter button -->
                         <button id="ansThree" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
@@ -195,7 +194,7 @@ sequence that reads the same backward as forward).</h2>
                         </p>
                             <!-- score -->
                             <div class="feedback-container mt-8 flex justify-center items-center space-x-4">
-                                <p class="text-lg font-semibold">Are you satisfied with the output?</p>
+                                <p class="text-lg font-semibold">Are you satisfied with this output?</p>
                             
                                 <div class="flex items-center space-x-6">
                                     
@@ -234,8 +233,7 @@ sequence that reads the same backward as forward).</h2>
             <div id="slide-4" class="slide snap-center shrink-0 w-screen h-full overflow-y-scroll py-2 flex justify-center bg-white border-r">
                 <div class="max-w-full w-11/12 flex flex-col h-full">
                     <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 1 / 15</p> -->
-                    <h2 class="lg:text-sm md:text-xl text-lg font-bold text-gray-900 mb-1">1. Write a function that checks whether a given string is a palindrome (a word, phrase, or
-sequence that reads the same backward as forward).</h2>
+                    <h2 class="lg:text-xl md:text-lg text-sm font-bold text-gray-900 mb-1">4. Sort an Array of Strings Alphabetically Write a function that sorts an array of strings.</h2>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 flex-1 overflow-y-scroll">
                         <!-- column 1 : code screenshot -->
@@ -243,12 +241,12 @@ sequence that reads the same backward as forward).</h2>
                             <img src="./images/Screenshot-4.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
                         </div>
                         <!-- column 2 : input, enter, output, score  -->
-                        <div class="pl-1 max-h-[63vh]">
+                        <div class="pl-1 flex flex-col justify-evenly">
                             <!-- input -->
                         <input 
                             id="inputFour"
                             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
-                            placeholder="Type a Word or Sentence to Reverse"
+                            placeholder="Array Sorting: Enter a list of words, seperated by commas, without spaces"
                         ></input>
                             <!-- enter button -->
                         <button id="ansFour" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
@@ -297,8 +295,8 @@ sequence that reads the same backward as forward).</h2>
             <div id="slide-5" class="slide snap-center shrink-0 w-screen h-full overflow-y-scroll py-2 flex justify-center bg-white border-r">
                 <div class="max-w-full w-11/12 flex flex-col h-full">
                     <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 1 / 15</p> -->
-                    <h2 class="lg:text-sm md:text-xl text-lg font-bold text-gray-900 mb-1">1. Write a function that checks whether a given string is a palindrome (a word, phrase, or
-sequence that reads the same backward as forward).</h2>
+                    <h2 class="lg:text-xl md:text-lg text-sm font-bold text-gray-900 mb-1">5. Create a function that takes two arrays and insert the second array in the middle of the
+first array. (eg., tuckIn([15,150], [45, 75, 35]) ➞ [15, 45, 75, 35, 150])</h2>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 flex-1 overflow-y-scroll">
                         <!-- column 1 : code screenshot -->
@@ -306,12 +304,17 @@ sequence that reads the same backward as forward).</h2>
                             <img src="./images/Screenshot-4.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
                         </div>
                         <!-- column 2 : input, enter, output, score  -->
-                        <div class="pl-1 max-h-[63vh]">
+                        <div class="pl-1 flex flex-col justify-evenly">
                             <!-- input -->
                         <input 
                             id="inputFive"
                             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
-                            placeholder="Type a Word or Sentence to Reverse"
+                            placeholder="Enter the Frist Array of items, seperated by commas, without spaces."
+                        ></input>
+                        <input 
+                            id="inputFive-second"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
+                            placeholder="Enter the Second Array of items, seperated by commas, without spaces."
                         ></input>
                             <!-- enter button -->
                         <button id="ansFive" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
@@ -387,7 +390,7 @@ sequence that reads the same backward as forward).</h2>
                 <a href="#slide-1" class="w-7 h-7 rounded-full text-center bg-yellow-400 transition-colors relative z-10">1</a>
                 <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none w-max">
                     <div class="bg-gray-800 text-white text-xs rounded py-2 px-2 shadow-lg relative">
-                    Reverse The String
+                    Palindrome
                         <div class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-4 border-transparent border-t-gray-800">
                         </div>
                     </div>
@@ -399,7 +402,7 @@ sequence that reads the same backward as forward).</h2>
                 <a href="#slide-2" class="w-7 h-7 rounded-full text-center bg-yellow-400 transition-colors relative z-10">2</a>
                 <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none w-max">
                     <div class="bg-gray-800 text-white text-xs rounded py-2 px-2 shadow-lg relative">
-                    Palindrome
+                    String Reverse
                         <div class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-4 border-transparent border-t-gray-800">
                         </div>
                     </div>
@@ -410,7 +413,7 @@ sequence that reads the same backward as forward).</h2>
                 <a href="#slide-3" class="w-7 h-7 rounded-full text-center bg-yellow-400 transition-colors relative z-10">3</a>
                 <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none w-max">
                     <div class="bg-gray-800 text-white text-xs rounded py-2 px-2 shadow-lg relative">
-                    Anagram
+                    Remove Whitespace
                         <div class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-4 border-transparent border-t-gray-800">
                         </div>
                     </div>
@@ -421,7 +424,7 @@ sequence that reads the same backward as forward).</h2>
                 <a href="#slide-4" class="w-7 h-7 rounded-full text-center bg-yellow-400 transition-colors relative z-10">4</a>
                 <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none w-max">
                     <div class="bg-gray-800 text-white text-xs rounded py-2 px-2 shadow-lg relative">
-                    Title Case
+                    Array Sorting
                         <div class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-4 border-transparent border-t-gray-800">
                         </div>
                     </div>
@@ -432,7 +435,7 @@ sequence that reads the same backward as forward).</h2>
                 <a href="#slide-5" class="w-7 h-7 rounded-full text-center bg-yellow-400 transition-colors relative z-10">5</a>
                 <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none w-max">
                     <div class="bg-gray-800 text-white text-xs rounded py-2 px-2 shadow-lg relative">
-                    Longest Word in Sentence
+                    Array Insertion
                         <div class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-4 border-transparent border-t-gray-800">
                         </div>
                     </div>

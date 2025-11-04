@@ -1,47 +1,8 @@
-// Global object to store satisfaction data: { "1": true, "2": false, ... }
-const satisfactionData = {}; 
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Select all feedback checkboxes using the unique class we added
-    const feedbackCheckboxes = document.querySelectorAll('.feedback-checkbox');
-
-    feedbackCheckboxes.forEach(checkbox => {
-        const slideId = checkbox.getAttribute('data-slide-id');
-        
-        // Initialize the data based on the initial 'checked' state (true for Yes, false for No)
-        satisfactionData[slideId] = checkbox.checked;
-
-        // Add a listener to track every time the toggle state changes
-        checkbox.addEventListener('change', () => {
-            // Store the state: true for 'Yes' (checked), false for 'No' (unchecked)
-            satisfactionData[slideId] = checkbox.checked;
-            
-            // Optional: Log the current state for debugging
-            // console.log(`Slide ${slideId} satisfaction: ${checkbox.checked ? 'Yes' : 'No'}`);
-            // console.log("Current Data:", satisfactionData);
-        });
-    });
-
-    // Example of how to output the final result (e.g., when clicking a final "Submit" button)
-    // You'll need to link this function to a button click event in your footer or final slide.
-    window.calculateFinalScore = () => {
-        const totalSlides = Object.keys(satisfactionData).length;
-        
-        // Filter the values to count how many are 'true' (Yes)
-        const totalYes = Object.values(satisfactionData).filter(isSatisfied => isSatisfied).length;
-        
-        alert(`Final Evaluation: ${totalYes} out of ${totalSlides} slides were marked "Satisfied (Yes)".`);
-        return totalYes;
-    };
-});
-
-
-
-const inputData = new Array(15);
-const enterButton = new Array(15);
-const outputData = new Array(15);
-// Code for Q/A-1
-// 1. Select the elements : Reverse the String
+const inputData = new Array(5);
+const enterButton = new Array(5);
+const outputData = new Array(5);
+// Code for Q/A-1 : palindrome checking function
+// 1. Select the elements
     inputData[0] = document.getElementById('inputOne');
     enterButton[0] = document.getElementById('ansOne');
     outputData[0] = document.getElementById('outputOne');
@@ -50,19 +11,26 @@ const outputData = new Array(15);
     enterButton[0].addEventListener('click', () => {
         // 3. Get text from the input tag
         const originalText = inputData[0].value;
-        let reversedText= "";
 
         // 4. core logic - implementation
-        for(let i=originalText.length-1; i>=0; i--)
-        {
-            reversedText= reversedText+originalText[i];
+        function checkPalindrome (str) {
+            let j = str.length-1;
+            for(let i=0; i<str.length/2; i++) {
+                if(str[i]!=str[j]) {
+                    return originalText+" is not a Palindrome"
+                }
+                else {
+                    j--;
+                }
+                return originalText+" is a Palindrome"
+            }
         }
 
         // 5. Display output
-        outputData[0].textContent = reversedText;
+        outputData[0].textContent = checkPalindrome (originalText);
     });
 
-// Code for Q/A-2 : Palindrome
+// Code for Q/A-2 : Function to Reverse the String
 // 1. Select the elements
     inputData[1] = document.getElementById('inputTwo');
     enterButton[1] = document.getElementById('ansTwo');
@@ -70,71 +38,44 @@ const outputData = new Array(15);
 // 2. Event Listener for the Enter Button
     enterButton[1].addEventListener('click', () => {
         const originalText = inputData[1].value; // 3. Get text from the input tag
-        let isPalindrome = true; 
-            const loweredText = originalText.toLowerCase(); //remove capitalisation
-            let modifiedText ="";
-            for(i=0; i<loweredText.length; i++) { //logic to filter alphabets
-                if (loweredText[i]>='a' && loweredText[i<='z'])
-                    {modifiedText=modifiedText+loweredText[i];}
-            }
-        const textLength = modifiedText.length;
 // 4. core logic - implementation
-        for(let i=0; i<textLength/2; i++) {
-            if(modifiedText[i]!=modifiedText[textLength-i-1])
-            {isPalindrome=false;
-                break;}
-        }
-        function result() {
-            if (isPalindrome)
-            {return originalText+" is a Palindrome";}
-            else
-            {return originalText+" is not a Palindrome"}
+        function stringReverse(str) {
+            let rev = "";
+            for(let i=str.length-1; i>=0; i--) {
+                rev += str[i];
+            }
+            return rev;
         }
  // 5. Display output
-        outputData[1].textContent = result();
+        outputData[1].textContent = stringReverse(originalText);
     });
 
 
-// Code for Q/A-3 : Anagram
+// Code for Q/A-3 : Function to remove all white spaces from a String
 // 1. Select the elements
-    inputData[2] = document.getElementById('inputThree-first');
-    const secondInputData = document.getElementById('inputThree-second')
+    inputData[2] = document.getElementById('inputThree');
     enterButton[2] = document.getElementById('ansThree');
     outputData[2] = document.getElementById('outputThree');
     // 2. Event Listener for the Enter Button
     enterButton[2].addEventListener('click', () => {
         // 3. Get text from the input tags
-        const firstWord = inputData[2].value;
-        const secondWord = secondInputData.value;
-        let secondWordArray = secondWord.split("");
-        let isAnagram = true;
+        const originalText = inputData[2].value;
         // 4. core logic - implementation
-        for(let i=0; i<firstWord.length; i++){
-            let count = secondWordArray.length;
-            for(let j=0; j<secondWordArray.length; j++)
-            {
-                if(firstWord[i]==secondWordArray[j]) {
-                    //remove that char from secondWord
-                    secondWordArray.splice(j,1)
+        function removeSpaces (str) {
+            let wordText = "";
+            for(let i=0; i<str.length; i++) {
+                if (str[i]!==" ") {
+                    wordText += str[i];
                 }
             }
-            if(count == secondWordArray.length){
-                isAnagram = false;
-                break;
-            }
-        }
-        function result() {
-            if (isAnagram)
-            {return firstWord+" & "+secondWord+" are Anagrams";}
-            else
-            {return firstWord+" & "+secondWord+" are not Anagrams"}
+            return wordText;
         }
         // 5. Display output
-        outputData[2].textContent = result();
+        outputData[2].textContent = removeSpaces(originalText);
     });
 
 
-// Code for Q/A-4 : Title Case
+// Code for Q/A-4 : Function to alphabetically sort a given Array of words
 // 1. Select the elements
     inputData[3] = document.getElementById('inputFour');
     enterButton[3] = document.getElementById('ansFour');
@@ -143,20 +84,48 @@ const outputData = new Array(15);
     // 2. Event Listener for the Enter Button
     enterButton[3].addEventListener('click', () => {
         // 3. Get text from the input tag
-        const givenSentence = inputData[3].value;
-        const givSent = givenSentence.toLowerCase(); //convert all chars to lower case
-        let givSentArray= givSent.split(" ");
-        let titleCase = "";
+        const originalText = inputData[3].value;
+        let givenArray= originalText.split(",");
+        let orderedArray = new Array();
         // 4. core logic - implementation
-        for(let i=0; i<givSentArray.length; i++)
-        {   let firstLetter = givSentArray[i].charAt(0).toUpperCase();
-            let l = givSentArray[i].length;     // length of the current word
-            let restOfLetters = givSentArray[i].substring(1,l);
-            titleCase = titleCase+" "+firstLetter+restOfLetters;
+        
+        function shortestWord (str1, str2) {
+            if (str1.length > str2.length) {
+                return str2;
+            }
+            else {
+                return str1; //returns first string even if both are equal by length, so that array shift() operation is easy if needed.
+            }
+        }
+
+        function smallestWord (str1, str2) {
+            sw = shortestWord(str1, str2); 
+            for (let j=0; j<sw.length; j++) {
+                if (str1[j] < str2[j]) {
+                    return str1;
+                }
+                if (str2[j] < str1[j]) {
+                    return str2
+                }
+            }
+            return sw; // if both are equal till the sw.length,  shortest word is the best choice
+        }
+
+        function sortArray (arr) {
+            while (arr.length>=1) {
+                let smallest = arr[0];
+                for (let i=1; i<arr.length; i++) {
+                    smallest = smallestWord(smallest, arr[i]);
+                    }
+                orderedArray.push(smallest);
+                removeEle = arr.indexOf(smallest);
+                arr.splice(removeEle, 1); // remove 1 element from the index of removeEle
+            }
+            return orderedArray;
         }
 
         // 5. Display output
-        outputData[3].textContent = titleCase.trim();
+        outputData[3].textContent = sortArray(givenArray);
     });
 
 
