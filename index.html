@@ -16,19 +16,19 @@
 </head>
 
 
-<body class="bg-gray-50 h-screen overflow-hidden overflow-x-hidden">
+<body class="bg-gray-300 h-screen overflow-x-hidden">
 
-    <div class="h-full flex flex-col">
+    <div class="flex flex-col">
 
         <header class="bg-slate-300 flex justify-between">
         <div class="w-1/6"><img src="./icons/AIT-white.jpg" alt="AIT icon" class="w-auto"></div>
         <div class="text-center flex-wrap self-center text-sky-800 font-extrabold text-2xl">Functions: JavaScript Assignment</div>
-        <div class="text-center self-center w-1/6"><p class="w-auto">Mentor: Praveen S, <br> 03-November-2025</p></div>
+        <div class="text-center self-center w-1/6 text-xs md:text-sm lg:text-lg"><p class="w-auto">Mentor: Praveen S, <br> 03-November-2025</p></div>
         </header>
         
         <div class="flex justify-center bg-blue-950 shadow-sm sticky top-0 z-10">
-            <h1 class="text-xl font-bold text-orange-500">Scroll horizontally to navigate all the 5 Q/A.</h1>
-            <p class="text-sm px-4 text-white mt-1"> slide : (Q/A - <span id="current-q">1</span>)</p>
+            <h1 class="text-xs md:text-sm lg:text-lg font-bold text-orange-500">Scroll horizontally to navigate all the 5 Q/A.</h1>
+            <p class="text-xs md:text-sm lg:text-lg px-4 text-white mt-1"> slide : (Q/A - <span id="current-q">1</span>)</p>
             <!-- <p class="text-sm text-gray-500 mt-1">Scroll horizontally to navigate 15 Q/A.</p> -->
         </div>
 
@@ -39,20 +39,20 @@
 
 
 <!-- Slide 1 : Question/Answer - 1 -->
-            <div id="slide-1" class="slide snap-center shrink-0 w-screen h-full py-2 flex justify-center bg-white border-r">
-                <div class="max-w-full w-11/12">
+            <div id="slide-1" class="slide snap-center shrink-0 w-screen h-full overflow-y-scroll py-2 flex justify-center bg-white border-r">
+                <div class="max-w-full w-11/12 flex flex-col h-full">
                     <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 1 / 15</p> -->
-                    <h2 class="text-2xl font-bold text-gray-900 mb-1">1. Write a function that checks whether a given string is a palindrome (a word, phrase, or
+                    <h2 class="lg:text-sm md:text-xl text-lg font-bold text-gray-900 mb-1">1. Write a function that checks whether a given string is a palindrome (a word, phrase, or
 sequence that reads the same backward as forward).</h2>
 
-                    <div class="grid grid-cols-2">
+                    <div class="grid grid-cols-1 md:grid-cols-2 flex-1 overflow-y-scroll">
                         <!-- column 1 : code screenshot -->
-                        <div class="w-full max-w-5xl max-h-40 overflow-y-scroll pl-4 rounded-md">
+                        <div class="w-full max-h-[63vh] overflow-y-scroll pb-2 rounded-md">
+                            <!-- w-full max-w-5xl max-h-40 overflow-y-scroll pl-4 rounded-md -->
                             <img src="./images/Screenshot-1.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
                         </div>
-
                         <!-- column 2 : input, enter, output, score  -->
-                        <div>
+                        <div class="pl-1 max-h-[63vh]">
                             <!-- input -->
                         <input 
                             id="inputOne"
@@ -62,136 +62,297 @@ sequence that reads the same backward as forward).</h2>
                             <!-- enter button -->
                         <button id="ansOne" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
                             <!-- output -->
-                        <p id="outputOne" class="mt-4 text-left text-lg pl-2 text-green-500 bg-slate-700 w-full min-h-max h-20 rounded-md">
+                        <p id="outputOne" class="mt-4 text-left text-lg pl-2 text-green-500 bg-slate-700 w-full min-h-max h-40 rounded-md">
                             output_
                         </p>
                             <!-- score -->
                             <div class="feedback-container mt-8 flex justify-center items-center space-x-4">
                                 <p class="text-lg font-semibold">Are you satisfied with the output?</p>
-                                <!-- Yes/No Toggle -->
-                                <div class="flex items-center space-x-3">
-                                    <span class="text-sm font-medium text-gray-700 select-none">No</span>
-
-                                    <input type="checkbox" id="yes-no-toggle" class="sr-only peer" checked>
-
-                                    <label for="yes-no-toggle" class="relative inline-flex items-center cursor-pointer">
-                                        
-                                        <div class="w-14 h-8 bg-red-400 rounded-full peer peer-checked:bg-green-500 transition-colors duration-300"></div>
-                                        
-                                        <div class="absolute left-1 top-1 h-6 w-6 bg-white rounded-full transition-transform duration-300 transform peer-checked:translate-x-6"></div>
-                                        
-                                        <div class="absolute inset-0 flex items-center justify-between px-2 text-xs font-bold text-white select-none pointer-events-none">
-                                            <span class="opacity-100 peer-checked:opacity-0 transition-opacity duration-300">NO</span>
-                                            <span class="opacity-0 peer-checked:opacity-100 transition-opacity duration-300">YES</span>
-                                        </div>
+                            
+                                <div class="flex items-center space-x-6">
+                                    
+                                    <label for="sat-yes-1" class="flex items-center space-x-1 cursor-pointer">
+                                        <input 
+                                            type="radio" 
+                                            id="sat-yes-1" 
+                                            name="satisfaction-slide-1" 
+                                            value="yes" 
+                                            data-slide-id="1"
+                                            class="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 feedback-radio" 
+                                            checked
+                                        >
+                                        <span class="text-sm font-medium text-green-700">Yes</span>
                                     </label>
 
-                                    <span class="text-sm font-medium text-gray-700 select-none">Yes</span>
+                                    <label for="sat-no-1" class="flex items-center space-x-1 cursor-pointer">
+                                        <input 
+                                            type="radio" 
+                                            id="sat-no-1" 
+                                            name="satisfaction-slide-1" 
+                                            value="no" 
+                                            data-slide-id="1"
+                                            class="h-4 w-4 text-red-600 border-gray-300 focus:ring-red-500 feedback-radio"
+                                        >
+                                        <span class="text-sm font-medium text-red-700">No</span>
+                                    </label>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
    
-            
-<!-- Slide 2 : Question/Answer - 2 -->
-            <div id="slide-2" class="slide snap-center shrink-0 w-screen h-full py-2 flex justify-center bg-white border-r">
-                <div class="max-w-5xl w-4/5">
-                    <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 2 / 15</p> -->
-                    <h2 class="text-2xl font-bold text-gray-900 mb-1">2. Create a program that checks if a given string is a palindrome. A palindrome is a
-word, phrase, or sequence of characters that reads the same forwards and
- backward (ignoring spaces, punctuation, and caps).</h2>
-                    <div class="w-full max-w-5xl max-h-40 overflow-y-scroll pl-4 rounded-md">
-                     <img src="./images/Screenshot-2.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
+<!-- Slide - 2 -->
+            <div id="slide-2" class="slide snap-center shrink-0 w-screen h-full overflow-y-scroll py-2 flex justify-center bg-white border-r">
+                <div class="max-w-full w-11/12 flex flex-col h-full">
+                    <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 1 / 15</p> -->
+                    <h2 class="lg:text-sm md:text-xl text-lg font-bold text-gray-900 mb-1">1. Write a function that checks whether a given string is a palindrome (a word, phrase, or
+sequence that reads the same backward as forward).</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 flex-1 overflow-y-scroll">
+                        <!-- column 1 : code screenshot -->
+                        <div class="w-full max-h-[63vh] overflow-y-scroll pb-2 rounded-md">
+                            <!-- w-full max-w-5xl max-h-40 overflow-y-scroll pl-4 rounded-md -->
+                            <img src="./images/Screenshot-2.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
+                        </div>
+                        <!-- column 2 : input, enter, output, score  -->
+                        <div class="pl-1 max-h-[63vh]">
+                            <!-- input -->
+                        <input 
+                            id="inputTwo"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
+                            placeholder="Type a Word or Sentence to Reverse"
+                        ></input>
+                            <!-- enter button -->
+                        <button id="ansTwo" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
+                            <!-- output -->
+                        <p id="outputTwo" class="mt-4 text-left text-lg pl-2 text-green-500 bg-slate-700 w-full min-h-max h-40 rounded-md">
+                            output_
+                        </p>
+                            <!-- score -->
+                            <div class="feedback-container mt-8 flex justify-center items-center space-x-4">
+                                <p class="text-lg font-semibold">Are you satisfied with the output?</p>
+                            
+                                <div class="flex items-center space-x-6">
+                                    
+                                    <label for="sat-yes-2" class="flex items-center space-x-1 cursor-pointer">
+                                        <input 
+                                            type="radio" 
+                                            id="sat-yes-2" 
+                                            name="satisfaction-slide-2" 
+                                            value="yes" 
+                                            data-slide-id="2"
+                                            class="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 feedback-radio" 
+                                            checked
+                                        >
+                                        <span class="text-sm font-medium text-green-700">Yes</span>
+                                    </label>
+
+                                    <label for="sat-no-2" class="flex items-center space-x-1 cursor-pointer">
+                                        <input 
+                                            type="radio" 
+                                            id="sat-no-2" 
+                                            name="satisfaction-slide-2" 
+                                            value="no" 
+                                            data-slide-id="2"
+                                            class="h-4 w-4 text-red-600 border-gray-300 focus:ring-red-500 feedback-radio"
+                                        >
+                                        <span class="text-sm font-medium text-red-700">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <input 
-                        id="inputTwo"
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
-                        placeholder="Enter a String to check Palindrome. (o/p will be case-insentive, & special chars ignored)"
-                    ></input>
-                    <button id="ansTwo" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
-                    
-                    <p id="outputTwo" class="mt-4 text-left text-lg pl-2 text-green-500 bg-slate-700 w-full min-h-max h-20 rounded-md">
-                        output_
-                    </p>
                 </div>
             </div>
 
 
+   <!-- Slide 3 : Q/A - 3 -->
+            <div id="slide-3" class="slide snap-center shrink-0 w-screen h-full overflow-y-scroll py-2 flex justify-center bg-white border-r">
+                <div class="max-w-full w-11/12 flex flex-col h-full">
+                    <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 1 / 15</p> -->
+                    <h2 class="lg:text-sm md:text-xl text-lg font-bold text-gray-900 mb-1">1. Write a function that checks whether a given string is a palindrome (a word, phrase, or
+sequence that reads the same backward as forward).</h2>
 
-<!-- Slide 3 : Question/Answer - 3 -->
-            <div id="slide-3" class="slide snap-center shrink-0 w-screen h-full py-2 flex justify-center bg-white border-r">
-                <div class="max-w-5xl w-4/5">
-                    <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 3 / 15</p> -->
-                    <h2 class="text-xl font-bold text-gray-900 mb-1">3. Write a program that takes two strings as input and determines if they are anagrams
-of each other. Anagrams are words or phrases formed by rearranging the
- letters of another, such as "listen" and "silent."
-</h2>
-                    <div class="w-full max-w-5xl max-h-40 overflow-y-scroll pl-4 rounded-md">
-                     <img src="./images/Screenshot-3.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 flex-1 overflow-y-scroll">
+                        <!-- column 1 : code screenshot -->
+                        <div class="w-full max-h-[63vh] overflow-y-scroll pb-2 rounded-md">
+                            <img src="./images/Screenshot-3.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
+                        </div>
+                        <!-- column 2 : input, enter, output, score  -->
+                        <div class="pl-1 max-h-[63vh]">
+                            <!-- input -->
+                        <input 
+                            id="inputThree"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
+                            placeholder="Type a Word or Sentence to Reverse"
+                        ></input>
+                            <!-- enter button -->
+                        <button id="ansThree" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
+                            <!-- output -->
+                        <p id="outputThree" class="mt-4 text-left text-lg pl-2 text-green-500 bg-slate-700 w-full min-h-max h-40 rounded-md">
+                            output_
+                        </p>
+                            <!-- score -->
+                            <div class="feedback-container mt-8 flex justify-center items-center space-x-4">
+                                <p class="text-lg font-semibold">Are you satisfied with the output?</p>
+                            
+                                <div class="flex items-center space-x-6">
+                                    
+                                    <label for="sat-yes-3" class="flex items-center space-x-1 cursor-pointer">
+                                        <input 
+                                            type="radio" 
+                                            id="sat-yes-3" 
+                                            name="satisfaction-slide-3" 
+                                            value="yes" 
+                                            data-slide-id="3"
+                                            class="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 feedback-radio" 
+                                            checked
+                                        >
+                                        <span class="text-sm font-medium text-green-700">Yes</span>
+                                    </label>
+
+                                    <label for="sat-no-3" class="flex items-center space-x-1 cursor-pointer">
+                                        <input 
+                                            type="radio" 
+                                            id="sat-no-3" 
+                                            name="satisfaction-slide-3" 
+                                            value="no" 
+                                            data-slide-id="3"
+                                            class="h-4 w-4 text-red-600 border-gray-300 focus:ring-red-500 feedback-radio"
+                                        >
+                                        <span class="text-sm font-medium text-red-700">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <input 
-                        id="inputThree-first"
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
-                        placeholder="Type the first test-word for Anagram"
-                    ></input>
-                    <input 
-                        id="inputThree-second"
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
-                        placeholder="Type the second test-word for Anagram"
-                    ></input>
-                    <button id="ansThree" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
-                    
-                    <p id="outputThree" class="mt-4 text-left text-lg pl-2 text-green-500 bg-slate-700 w-full min-h-max h-20 rounded-md">
-                        output_
-                    </p>
+                </div>
+            </div>
+   
+<!-- Slide 4 : Q/A - 4 -->
+            <div id="slide-4" class="slide snap-center shrink-0 w-screen h-full overflow-y-scroll py-2 flex justify-center bg-white border-r">
+                <div class="max-w-full w-11/12 flex flex-col h-full">
+                    <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 1 / 15</p> -->
+                    <h2 class="lg:text-sm md:text-xl text-lg font-bold text-gray-900 mb-1">1. Write a function that checks whether a given string is a palindrome (a word, phrase, or
+sequence that reads the same backward as forward).</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 flex-1 overflow-y-scroll">
+                        <!-- column 1 : code screenshot -->
+                        <div class="w-full max-h-[63vh] overflow-y-scroll pb-2 rounded-md">
+                            <img src="./images/Screenshot-4.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
+                        </div>
+                        <!-- column 2 : input, enter, output, score  -->
+                        <div class="pl-1 max-h-[63vh]">
+                            <!-- input -->
+                        <input 
+                            id="inputFour"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
+                            placeholder="Type a Word or Sentence to Reverse"
+                        ></input>
+                            <!-- enter button -->
+                        <button id="ansFour" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
+                            <!-- output -->
+                        <p id="outputFour" class="mt-4 text-left text-lg pl-2 text-green-500 bg-slate-700 w-full min-h-max h-40 rounded-md">
+                            output_
+                        </p>
+                            <!-- score -->
+                            <div class="feedback-container mt-8 flex justify-center items-center space-x-4">
+                                <p class="text-lg font-semibold">Are you satisfied with the output?</p>
+                            
+                                <div class="flex items-center space-x-6">
+                                    
+                                    <label for="sat-yes-4" class="flex items-center space-x-1 cursor-pointer">
+                                        <input 
+                                            type="radio" 
+                                            id="sat-yes-4" 
+                                            name="satisfaction-slide-4" 
+                                            value="yes" 
+                                            data-slide-id="4"
+                                            class="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 feedback-radio" 
+                                            checked
+                                        >
+                                        <span class="text-sm font-medium text-green-700">Yes</span>
+                                    </label>
+
+                                    <label for="sat-no-4" class="flex items-center space-x-1 cursor-pointer">
+                                        <input 
+                                            type="radio" 
+                                            id="sat-no-4" 
+                                            name="satisfaction-slide-4" 
+                                            value="no" 
+                                            data-slide-id="4"
+                                            class="h-4 w-4 text-red-600 border-gray-300 focus:ring-red-500 feedback-radio"
+                                        >
+                                        <span class="text-sm font-medium text-red-700">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-<!-- Slide 4 : Question/Answer - 4 -->
-            <div id="slide-4" class="slide snap-center shrink-0 w-screen h-full py-2 flex justify-center bg-white border-r">
-                <div class="max-w-5xl w-4/5">
-                    <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 4 / 15</p> -->
-                    <h2 class="text-2xl font-bold text-gray-900 mb-1">4. Create a program that converts a sentence into title case, where the first letter of
-each word is capitalized, and the rest of the letters are in lowercase.
- For example, "the quick brown fox" should become "The Quick Brown Fox."</h2>
-                    <div class="w-full max-w-5xl max-h-40 overflow-y-scroll pl-4 rounded-md">
-                     <img src="./images/Screenshot-4.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
-                    </div>
-                    <input 
-                        id="inputFour"
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
-                        placeholder="Enter the sentence to be converted into Title Case Format"
-                    ></input>
-                    <button id="ansFour" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
-                    
-                    <p id="outputFour" class="mt-4 text-left text-lg pl-2 text-green-500 bg-slate-700 w-full min-h-max h-20 rounded-md">
-                        output_
-                    </p>
-                </div>
-            </div>
+<!-- Slide 5 : Q/A - 5 -->
+            <div id="slide-5" class="slide snap-center shrink-0 w-screen h-full overflow-y-scroll py-2 flex justify-center bg-white border-r">
+                <div class="max-w-full w-11/12 flex flex-col h-full">
+                    <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 1 / 15</p> -->
+                    <h2 class="lg:text-sm md:text-xl text-lg font-bold text-gray-900 mb-1">1. Write a function that checks whether a given string is a palindrome (a word, phrase, or
+sequence that reads the same backward as forward).</h2>
 
-<!-- Slide 5 : Question/Answer - 5 -->
-            <div id="slide-5" class="slide snap-center shrink-0 w-screen h-full py-2 flex justify-center bg-white border-r">
-                <div class="max-w-5xl w-4/5">
-                    <!-- <p class="text-sm font-semibold text-blue-600 mb-4">Question 5 / 15</p> -->
-                    <h2 class="text-2xl font-bold text-gray-900 mb-1">5. Write a program that finds and returns the longest word in a given sentence. You
-can assume that the sentence consists of words separated by spaces.</h2>
-                    <div class="w-full max-w-5xl max-h-40 overflow-y-scroll pl-4 rounded-md">
-                     <img src="./images/Screenshot-5.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 flex-1 overflow-y-scroll">
+                        <!-- column 1 : code screenshot -->
+                        <div class="w-full max-h-[63vh] overflow-y-scroll pb-2 rounded-md">
+                            <img src="./images/Screenshot-4.png" alt="screen-shot-of-the-solution-code" class="w-full rounded-lg">
+                        </div>
+                        <!-- column 2 : input, enter, output, score  -->
+                        <div class="pl-1 max-h-[63vh]">
+                            <!-- input -->
+                        <input 
+                            id="inputFive"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
+                            placeholder="Type a Word or Sentence to Reverse"
+                        ></input>
+                            <!-- enter button -->
+                        <button id="ansFive" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
+                            <!-- output -->
+                        <p id="outputFive" class="mt-4 text-left text-lg pl-2 text-green-500 bg-slate-700 w-full min-h-max h-40 rounded-md">
+                            output_
+                        </p>
+                            <!-- score -->
+                            <div class="feedback-container mt-8 flex justify-center items-center space-x-4">
+                                <p class="text-lg font-semibold">Are you satisfied with the output?</p>
+                            
+                                <div class="flex items-center space-x-6">
+                                    
+                                    <label for="sat-yes-5" class="flex items-center space-x-1 cursor-pointer">
+                                        <input 
+                                            type="radio" 
+                                            id="sat-yes-5" 
+                                            name="satisfaction-slide-5" 
+                                            value="yes" 
+                                            data-slide-id="5"
+                                            class="h-4 w-4 text-green-600 border-gray-300 focus:ring-green-500 feedback-radio" 
+                                            checked
+                                        >
+                                        <span class="text-sm font-medium text-green-700">Yes</span>
+                                    </label>
+
+                                    <label for="sat-no-5" class="flex items-center space-x-1 cursor-pointer">
+                                        <input 
+                                            type="radio" 
+                                            id="sat-no-5" 
+                                            name="satisfaction-slide-5" 
+                                            value="no" 
+                                            data-slide-id="5"
+                                            class="h-4 w-4 text-red-600 border-gray-300 focus:ring-red-500 feedback-radio"
+                                        >
+                                        <span class="text-sm font-medium text-red-700">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <input 
-                        id="inputFive"
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-shadow mt-1" 
-                        placeholder="Enter the Sentence to find it's longest word"
-                    ></input>
-                    <button id="ansFive" class="bg-sky-500 hover:bg-sky-400 active:bg-green-600 p-2 w-full rounded-xl mt-1">Enter</button>
-                    
-                    <p id="outputFive" class="mt-4 text-left text-lg pl-2 text-green-500 bg-slate-700 w-full min-h-max h-20 rounded-md">
-                        output_
-                    </p>
                 </div>
             </div>
 
@@ -199,9 +360,12 @@ can assume that the sentence consists of words separated by spaces.</h2>
             <div id="slide-16" class="slide snap-center shrink-0 w-screen h-full p-8 flex items-center justify-center bg-blue-50">
                 <div class="max-w-md w-full text-center">
                     <h2 class="text-3xl font-extrabold text-blue-800 mb-4">Thankyou For Visting.</h2>
-                    <p class="text-lg text-blue-600 mb-8">The score is : <span id="score"></span>/15.</p>
-                    <button class="px-8 py-3 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-colors shadow-lg">
+                    <p class="text-lg text-blue-600 mb-8">You have awarded a Score of <span id="score"></span>/5.</p>
+                    <!-- <button class="px-8 py-3 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-colors shadow-lg">
                         You've Reached the End!
+                    </button> -->
+                    <button onclick="calculateFinalScore()" class="bg-blue-600 text-white p-2 rounded">
+                    Evaluate Total Satisfaction
                     </button>
                 </div>
             </div>
@@ -361,6 +525,107 @@ can assume that the sentence consists of words separated by spaces.</h2>
     updateUI(); 
 });
     </script>
-<script src="assignment-logic.js"></script>
+
+<!-- Satisfaction Score  -->
+ <script>
+    // Global object to store satisfaction data: { "1": "yes", "2": "yes", ... }
+    let satisfactionData = {}; 
+    let TOTAL_QUESTIONS = 5;
+
+    // Function to calculate and display the final score
+    window.calculateFinalScore = () => {
+        // Count how many entries in satisfactionData are "yes"
+        const totalYes = Object.values(satisfactionData).filter(status => status === 'yes').length;
+        
+        // Update the score display in the final slide
+        const scoreElement = document.getElementById('score');
+        if (scoreElement) {
+            scoreElement.textContent = totalYes;
+        }
+
+        alert(`Final Satisfaction Score: ${totalYes} out of ${TOTAL_QUESTIONS} slides marked "Satisfied (Yes)".`);
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // ... (Your existing UI/scroll logic goes here) ...
+        const container = document.getElementById('qa-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const currentQSpan = document.getElementById('current-q');
+        const TOTAL_SLIDES = 6; 
+
+        function updateUI() {
+             // ... (Your updateUI implementation) ...
+            const viewportWidth = container.clientWidth;
+            const currentIndex = Math.round(container.scrollLeft / viewportWidth);
+            currentQSpan.textContent = Math.min(currentIndex + 1, TOTAL_SLIDES);
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === TOTAL_SLIDES - 1;
+            
+            if (currentIndex === TOTAL_SLIDES - 1) {
+                nextBtn.textContent = 'Submit';
+            } else {
+                nextBtn.textContent = 'Next →';
+            }
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            const viewportWidth = container.clientWidth;
+            container.scrollBy({ left: viewportWidth, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const viewportWidth = container.clientWidth;
+            container.scrollBy({ left: -viewportWidth, behavior: 'smooth' });
+        });
+
+        container.addEventListener('scroll', updateUI);
+        updateUI(); 
+        
+        // --- NEW Radio Button Logic ---
+        const feedbackRadios = document.querySelectorAll('.feedback-radio');
+
+        feedbackRadios.forEach(radio => {
+            const slideId = radio.getAttribute('data-slide-id');
+            
+            // 1. Initialize: Set default score based on the 'checked' radio (default is 'yes')
+            if (radio.checked) {
+                 satisfactionData[slideId] = radio.value;
+            }
+
+            // 2. Listen: Update the score when a radio button is clicked
+            radio.addEventListener('change', (event) => {
+                // event.target.value will be 'yes' or 'no'
+                satisfactionData[slideId] = event.target.value;
+                console.log(`Slide ${slideId} satisfaction set to: ${event.target.value}`);
+            });
+        });
+    });
+</script>
+<script>
+    // Global object to store satisfaction data: { "1": "yes", "2": "yes", ... }
+    satisfactionData = {}; 
+    TOTAL_QUESTIONS = 5; // Set the total questions to 5
+
+    // Function to calculate and display the final score
+    window.calculateFinalScore = () => {
+        // Count how many entries in satisfactionData are "yes"
+        const totalYes = Object.values(satisfactionData).filter(status => status === 'yes').length;
+        
+        // Update the score display in the final slide
+        const scoreElement = document.getElementById('score');
+        if (scoreElement) {
+            // This sets the inner score (x) only. The HTML handles the "Your Score is" and "/5" text.
+            scoreElement.textContent = totalYes; 
+        }
+
+        // Removed the alert() to use the cleaner display on the slide.
+    };
+
+    // ... (rest of your existing document.addEventListener('DOMContentLoaded', ...) function)
+    // ...
+</script>
+
+<script src="script.js"></script>
 </body>
 </html>
